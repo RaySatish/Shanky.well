@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body,
+*,
+*::before,
+*::after {
+  font-family: "Poppins", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --agree: #36c490;
+  --neutral: #00b1af;
+  --disagree: #5188c9;
+  --question: #576070;
+}
+
+input[type="radio"] {
+  /* Use a green color for the checkbox */
+  background-color: #fff;
+  /* Make the checkbox slightly bigger */
+  /* Ensure the checkbox is visible */
+  opacity: 1;
+  /* Remove default styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add a border for better visibility */
+  /* Add rounded corners */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.agreeText {
+  color: var(--agree);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.disagreeText {
+  color: var(--disagree);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.question {
+  color: var(--question);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.opt1 {
+  width: 70px;
+  height: 70px;
+
+  border: 2px solid var(--agree);
+}
+
+.opt1:hover {
+  background-color: var(--agree);
+}
+
+.opt1:checked {
+  background-color: var(--agree);
+}
+
+.opt2 {
+  width: 55px;
+  height: 55px;
+
+  border: 2px solid var(--agree);
+}
+
+.opt2:hover {
+  background-color: var(--agree);
+}
+
+.opt2:checked {
+  background-color: var(--agree);
+}
+
+.opt3 {
+  width: 45px;
+  height: 45px;
+
+  border: 2px solid var(--agree);
+}
+
+.opt3:hover {
+  background-color: var(--agree);
+}
+
+.opt3:checked {
+  background-color: var(--agree);
+}
+
+.opt4 {
+  width: 35px;
+  height: 35px;
+
+  border: 2px solid var(--neutral);
+}
+
+.opt4:checked {
+  background-color: var(--neutral);
+}
+
+.opt4:hover {
+  background-color: var(--neutral);
+}
+
+.opt5 {
+  width: 45px;
+  height: 45px;
+
+  border: 2px solid var(--disagree);
+}
+
+.opt5:hover {
+  background-color: var(--disagree);
+}
+
+.opt5:checked {
+  background-color: var(--disagree);
+}
+
+.opt6 {
+  width: 55px;
+  height: 55px;
+
+  border: 2px solid var(--disagree);
+}
+
+.opt6:hover {
+  background-color: var(--disagree);
+}
+
+.opt6:checked {
+  background-color: var(--disagree);
+}
+
+.opt7 {
+  width: 70px;
+  height: 70px;
+
+  border: 2px solid var(--disagree);
+}
+
+.opt7:hover {
+  background-color: var(--disagree);
+}
+
+.opt7:checked {
+  background-color: var(--disagree);
+}
+
+.optionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.questionBox {
+  margin-inline: auto;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 24px;
+  border-bottom: 2px solid #dddfe2;
+}
+
+/*heading*/
+
+.headerX,
+.footerX {
+  width: 70%;
+  margin-inline: auto;
+  margin-block: 24px;
+}
+
+.headerX h1 {
+  font-size: 36px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.headerX hr {
+  background-color: #05bbc1;
+  height: 6px;
+  width: 50%;
+  margin-inline: auto;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.headerX p {
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddfe2;
+  line-height: 1.5;
+  color: var(--question);
+}
+
+.footerX {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: teal; /* Default button color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.button:hover {
+  background-color: var(--neutral); /* Button color on hover */
+}
+
+/*card design*/
+
+.cardBox {
+  margin: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 42px;
+}
+
+.card {
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 25px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  color: black !important;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card img {
+  width: 100%;
+}
+
+.containerown {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.disclaimer {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.header {
+  text-align: center;
+}
+.score {
+  font-size: 24px;
+  font-weight: bold;
+}
+.evaluation {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.analysis {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.paragraphs {
+  margin-top: 20px;
+}
+.buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+.button {
+  padding: 10px 20px;
+  background-color: #5ac4f2;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  background-color: #5ac4f2;
+  color: #ffffff;
+}
