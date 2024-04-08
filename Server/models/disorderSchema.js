@@ -11,6 +11,9 @@ const disorderSchema = mongoose.Schema({
   summary: {
     type: String,
   },
+  questions: {
+    type: Array,
+  },
   slug: {
     type: String,
   },

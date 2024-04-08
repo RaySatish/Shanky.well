@@ -12,9 +12,7 @@ const Start = () => {
     axios
       .get("http://127.0.0.1:9000/api/v1/disorder")
       .then((res) => {
-        console.log(res.data);
         const dataArray = Object.values(res.data.data);
-        console.log(dataArray);
         setDisorders(dataArray);
       })
       .catch((err) => {
@@ -36,8 +34,8 @@ const Start = () => {
             key={disorder.id}
             title={disorder.name}
             description={disorder.summary}
-            imageSrc={""}
-            to={`/quiz/${disorder.slug}`}
+            imageSrc={disorder.slug}
+            to={`/quiz?id=${disorder.slug}`}
           />
         ))}
       </div>

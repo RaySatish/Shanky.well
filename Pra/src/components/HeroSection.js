@@ -15,7 +15,7 @@ const HeroSection = () => {
           </p>
           <div className="flex justify-center mt-14 lg:justify-start">
             <NavLink
-              to="/reports"
+              to="/start"
               className="text-white bg-indigo-600 font-medium rounded-lg text-md px-5 py-4 text-center hover:bg-indigo-700 hover:drop-shadow-md transition duration-300 ease-in-out"
             >
               Get Started

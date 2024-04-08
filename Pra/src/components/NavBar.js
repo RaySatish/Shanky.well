@@ -13,7 +13,7 @@ const Navbar = ({ isLoggedIn }) => {
       <div className="container md:px-12 md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between">
           <NavLink to="/" className="flex items-center">
-            <img src="dist/img/logo.svg" className="h-10 mr-3" alt="logo" />
+            <img src="logo.png" className="h-16 mr-3" alt="logo" />
             <span className="text-2xl text-gray-900 font-sans font-bold">
               Shanky.well
             </span>

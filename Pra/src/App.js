@@ -5,8 +5,9 @@ import Signup from "./pages/Signup";
 import PageNotFound from "./pages/PageNotFound";
 import ForgetPassword from "./pages/ForgetPassword";
 import Start from "./pages/Start";
-import GetStarted from "./pages/GetStarted";
+import Quiz from "./pages/Quiz";
 import Question from "./components/Question";
+import Report from "./pages/Report";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/forgetPassword" element={<ForgetPassword />} />
         <Route path="/start" element={<Start />} />
         <Route path="/question" element={<Question />} />
-        <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/report" element={<Report />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

@@ -35,7 +35,7 @@ const Card = ({ imageSrc, title, description, to }) => {
     >
       <div className="overflow-hidden">
         <img
-          src={imageSrc}
+          src={`img/${imageSrc}.png`}
           alt=""
           className="w-full h-48 object-cover transition-transform duration-200 transform hover:scale-110"
         />
