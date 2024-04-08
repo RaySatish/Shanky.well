@@ -19,11 +19,3 @@ To get the website running locally:
 1. Clone this repository
 2. Install the required dependencies
 3. Start the development server
-
-## Contributing
-
-We welcome contributions to this project. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE.md](LICENSE.md) for more details.
