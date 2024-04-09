@@ -1,6 +1,6 @@
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
-const Disorder = require("./../models/disorderSchema");
+const Disorder = require("./../models/disorderModel");
 
 exports.addData = catchAsync(async (req, res, next) => {
   const list = await Disorder.create(req.body);

@@ -5,11 +5,13 @@ const {
   protect,
   forgetPassword,
   resetPassword,
+  logout,
 } = require("../controllers/authController");
 const router = express.Router();
 
 router.post("/signup", signup);
 router.post("/login", login);
+router.get("/logout", logout);
 router.post("/forgetPassword", forgetPassword);
 router.post("/resetPassword/:token", resetPassword);
 router.get("/display", protect, (req, res, next) => {

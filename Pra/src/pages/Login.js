@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import AuthContext from "../contexts/AuthProvider";
 import axios from "axios";
 
@@ -107,7 +107,10 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [type, setType] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+
+  const role = searchParams.get("role");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -126,7 +129,10 @@ function Login() {
       setAuth({ user: res.data.user, token: res.data.token });
       setType(res.data.status);
       setMessage("Login successful");
-      navigate("/");
+      if (role === "student") navigate("/student");
+      else if (role === "admin") navigate("/admin");
+      else if (role === "warden") navigate("/warden");
+      else if (role === "chief-warden") navigate("/chief-warden");
       setEmail("");
       setPassword("");
     } catch (err) {
@@ -144,8 +150,8 @@ function Login() {
           src="logo.png"
           alt="Your Company"
         />
-        <h2 className="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+        <h2 className="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 uppercase">
+          {role} login
         </h2>
       </div>
 
@@ -224,7 +230,7 @@ function Login() {
           </p>
         )}
 
-        <p className="mt-10 text-center text-sm text-gray-500">
+        {/* <p className="mt-10 text-center text-sm text-gray-500">
           Not a member?
           <span> </span>
           <Link
@@ -233,7 +239,7 @@ function Login() {
           >
             Sign up
           </Link>
-        </p>
+        </p> */}
       </div>
     </div>
   );
