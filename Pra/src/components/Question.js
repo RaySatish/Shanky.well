@@ -44,7 +44,7 @@ function Question({ question, index, setSelectedOptions, selectedOptions }) {
     <div className="questionBox">
       <p className="question">{question}</p>
       <div className="optionBox">
-        <span className="agreeText">Agree</span>
+        <span className="disagreeText">Disagree</span>
         {[1, 2, 3, 4, 5, 6, 7].map((value) => (
           <input
             key={value}
@@ -56,7 +56,7 @@ function Question({ question, index, setSelectedOptions, selectedOptions }) {
             checked={selectedOptions[index] === value}
           />
         ))}
-        <span className="disagreeText">Disagree</span>
+        <span className="agreeText">Agree</span>
       </div>
     </div>
   );

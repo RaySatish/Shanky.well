@@ -54,7 +54,8 @@ function Report() {
       <div className="container mx-auto p-4">
         <div className="bg-white shadow-md rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold mb-4">
-            Disorder: {disorder.name} - Intensity Level: {intensity}
+            Disorder: {disorder.name} <br /> Intensity Level: {intensity} <br />{" "}
+            Your Score: {value}
           </p>
           <button
             onClick={handleClick}

@@ -58,45 +58,45 @@ input[type="radio"] {
   width: 70px;
   height: 70px;
 
-  border: 2px solid var(--agree);
+  border: 2px solid var(--disagree);
 }
 
 .opt1:hover {
-  background-color: var(--agree);
+  background-color: var(--disagree);
 }
 
 .opt1:checked {
-  background-color: var(--agree);
+  background-color: var(--disagree);
 }
 
 .opt2 {
   width: 55px;
   height: 55px;
 
-  border: 2px solid var(--agree);
+  border: 2px solid var(--disagree);
 }
 
 .opt2:hover {
-  background-color: var(--agree);
+  background-color: var(--disagree);
 }
 
 .opt2:checked {
-  background-color: var(--agree);
+  background-color: var(--disagree);
 }
 
 .opt3 {
   width: 45px;
   height: 45px;
 
-  border: 2px solid var(--agree);
+  border: 2px solid var(--disagree);
 }
 
 .opt3:hover {
-  background-color: var(--agree);
+  background-color: var(--disagree);
 }
 
 .opt3:checked {
-  background-color: var(--agree);
+  background-color: var(--disagree);
 }
 
 .opt4 {
@@ -118,45 +118,45 @@ input[type="radio"] {
   width: 45px;
   height: 45px;
 
-  border: 2px solid var(--disagree);
+  border: 2px solid var(--agree);
 }
 
 .opt5:hover {
-  background-color: var(--disagree);
+  background-color: var(--agree);
 }
 
 .opt5:checked {
-  background-color: var(--disagree);
+  background-color: var(--agree);
 }
 
 .opt6 {
   width: 55px;
   height: 55px;
 
-  border: 2px solid var(--disagree);
+  border: 2px solid var(--agree);
 }
 
 .opt6:hover {
-  background-color: var(--disagree);
+  background-color: var(--agree);
 }
 
 .opt6:checked {
-  background-color: var(--disagree);
+  background-color: var(--agree);
 }
 
 .opt7 {
   width: 70px;
   height: 70px;
 
-  border: 2px solid var(--disagree);
+  border: 2px solid var(--agree);
 }
 
 .opt7:hover {
-  background-color: var(--disagree);
+  background-color: var(--agree);
 }
 
 .opt7:checked {
-  background-color: var(--disagree);
+  background-color: var(--agree);
 }
 
 .optionBox {

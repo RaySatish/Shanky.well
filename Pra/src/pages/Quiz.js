@@ -80,7 +80,7 @@ function Quiz() {
     let stressLevel = 0;
 
     for (const option of Object.values(selectedOptions)) {
-      stressLevel += Math.abs(8 - option);
+      stressLevel += option;
     }
 
     return stressLevel;
