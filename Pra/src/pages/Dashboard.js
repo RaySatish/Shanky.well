@@ -1,4 +1,3 @@
-import BarChart from "../components/BarChart";
 import DashboardCard from "../components/DashboardCard";
 
 function Dashboard() {
@@ -11,24 +10,6 @@ function Dashboard() {
     completedTreatments: 80,
   };
 
-  const data = {
-    A: 100,
-    B: 120,
-    C: 80,
-    D: 150,
-    E: 90,
-    F: 110,
-    G: 130,
-    H: 140,
-    I: 70,
-    J: 100,
-    K: 120,
-    L: 80,
-    M: 150,
-    N: 90,
-    O: 110,
-  };
-
   return (
     <div className="w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
@@ -38,7 +19,6 @@ function Dashboard() {
           <DashboardCard key={index} title={key} value={value} /> // Use DashboardCard
         ))}
       </div>
-      <div className="p-6">{/* <BarChart data={data} /> Use BarChart */}</div>
     </div>
   );
 }
