@@ -7,8 +7,7 @@ function About() {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto p-8 bg-white text-white"> {/* Added bg-black and text-white */}
-        {/* Module 1: Mental Health Support */}
+      <div className="container mx-auto p-8 bg-white text-white">
         <div className="module bg-gradient-to-r from-blue-500 to-gray-700 rounded-lg p-8 text-white mb-8">
           <h2 className="text-3xl font-bold mb-4">Mental Health Support</h2>
           <p className="text-lg mb-4">Empowering students with personalized assessments, professional counseling services, and additional features.</p>
@@ -18,8 +17,8 @@ function About() {
             >
               Test Assessment
             </NavLink>
-          <button className="button bg-white text-blue-500 py-2 px-4 rounded-lg">Learn More</button> {/* Link to learn more page */}
-          <div className="decorative-line h-px bg-white bg-opacity-25 my-8"></div> {/* Decorative line */}
+          <button className="button bg-white text-blue-500 py-2 px-4 rounded-lg">Learn More</button>
+          <div className="decorative-line h-px bg-white bg-opacity-25 my-8"></div> 
           <div className="features grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="feature bg-white rounded-lg p-4">
               <h3 className="text-xl font-bold mb-2">Personalized Assessments</h3>

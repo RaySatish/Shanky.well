@@ -70,14 +70,14 @@ const Navbar = () => {
             to="/services"
             className="font-medium duration-500 text-gray-900 hover:text-indigo-600"
           >
-            Services
+            Our Counsellor
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/contact"
             className="font-medium duration-500 text-gray-900 hover:text-indigo-600"
           >
             Contact
-          </NavLink>
+          </NavLink> */}
           {!isLoggedIn ? (
             <>
               <NavLink
