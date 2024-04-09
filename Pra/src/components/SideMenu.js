@@ -12,7 +12,7 @@ const SideMenu = () => {
 
   return (
     <div className="bg-gray-800 text-white w-64 flex flex-col">
-      <div className="flex items-center flex-shrink-0 py-4 px-6 bg-gray-900">
+      <div className="flex items-center flex-shrink-0 py-4 px-2 bg-gray-900">
         <img src="logo.png" alt="" className="mr-2 w-12" />
         <h1 className="text-xl font-bold">Shanky.well</h1>
       </div>
