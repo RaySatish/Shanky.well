@@ -39,55 +39,44 @@ const ChatPage = () => {
     setMessageInput('');
   };
 
+
   return (
-    <div className="chat-container">
-      <header className="chat-header bg-dark-color-a text-white p-4 flex justify-between items-center">
-        <h1>
-          <i className="fas fa-smile"></i> Shanky.well
-        </h1>
-        <a href="/" id="leave-btn" className="btn">
-          Leave Room
-        </a>
+    <div className="flex flex-col h-screen bg-gray-100">
+      <header className="p-4 bg-blue-500 text-white">
+        <h1 className="font-bold text-xl">Shanky.well</h1>
+        <a href="/" className="text-sm text-white underline">Leave Room</a>
       </header>
-      <main className="chat-main flex">
-        <div className="chat-sidebar bg-dark-color-b text-white p-4 overflow-y-auto">
-          <h3 className="text-lg">
-            <i className="fas fa-comments"></i> Room Name:
-          </h3>
-          <h2 id="room-name">{room}</h2>
-          <h3 className="text-lg">
-            <i className="fas fa-users"></i> Users
-          </h3>
-          <ul id="users">
+      <main className="flex flex-grow">
+        <div className="w-64 bg-blue-800 text-white p-4">
+          <h3 className="font-bold text-lg mb-4">Room Name: {room}</h3>
+          <h3 className="font-bold text-lg mb-4">Users</h3>
+          <ul>
             {users.map((user) => (
-              <li key={user.id}>{user.username}</li>
+              <li key={user.id} className="mb-2">{user.username}</li>
             ))}
           </ul>
         </div>
-        <div className="chat-messages p-4 flex-1 overflow-y-auto">
+        <div className="flex-1 bg-white p-4 overflow-y-scroll">
           {messages.map((message, index) => (
-            <div key={index} className="message p-4 mb-4 bg-light-color rounded">
-              <p className="meta text-dark-color-b text-sm font-bold opacity-70">
+            <div key={index} className="p-4 mb-4 bg-gray-200 rounded">
+              <p className="text-sm text-gray-500 mb-2">
                 {message.username} <span>{message.time}</span>
               </p>
-              <p className="text">{message.text}</p>
+              <p className="text-gray-800">{message.text}</p>
             </div>
           ))}
         </div>
       </main>
-      <div className="chat-form-container bg-dark-color-a p-4">
-        <form onSubmit={sendMessage} id="chat-form" className="flex">
+      <div className="p-4 bg-blue-500">
+        <form onSubmit={sendMessage} className="flex">
           <input
             type="text"
-            id="msg"
             placeholder="Enter Message"
             value={messageInput}
             onChange={(e) => setMessageInput(e.target.value)}
-            className="form-input text-lg flex-1 mr-2"
+            className="flex-grow mr-2 py-2 px-4 rounded bg-white border-2 border-blue-300 focus:outline-none focus:border-blue-500"
           />
-          <button type="submit" className="btn">
-            <i className="fas fa-paper-plane"></i> Send
-          </button>
+          <button type="submit" className="py-2 px-4 rounded bg-white text-blue-500 font-bold">Send</button>
         </form>
       </div>
     </div>
