@@ -8,6 +8,7 @@ import Start from "./pages/Start";
 import Quiz from "./pages/Quiz";
 import Question from "./components/Question";
 import Report from "./pages/Report";
+import About from "./pages/About";
 import Consult from "./pages/Consult";
 import Main from "./pages/Main";
 import StudentDashboard from "./pages/StudentDashboard";
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
 
         <Route path="/student" element={<StudentDashboard />} />
