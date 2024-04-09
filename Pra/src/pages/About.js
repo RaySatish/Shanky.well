@@ -1,7 +1,10 @@
 import React from 'react';
+import Navbar from '../components/NavBar';
 
-function App() {
+function About() {
   return (
+    <>
+    <Navbar />
     <div className="container mx-auto p-8">
       {/* Module 1: Mental Health Support */}
       <div className="module bg-gradient-to-r from-blue-500 to-gray-700 rounded-lg p-8 text-white mb-8">
@@ -49,6 +52,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
@@ -57,4 +61,4 @@ function takeAssessment() {
   window.location.href = "assessment.html";
 }
 
-export default App;
+export default About;
