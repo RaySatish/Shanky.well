@@ -16,12 +16,13 @@ import StudentDashboard from "./pages/StudentDashboard";
 import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import ChatPage from './pages/ChatPage';
+import JoinPage from './pages/JoinPage';
 
 import VideoChatWithDoctor from "./pages/VideoChatWithDoctor";
 
 import Appointment from "./components/AppointmentForm";
 import Dashboard from "./pages/Dashboard";
-
 
 // const DashboardPage = () => <h1>Dashboard Page</h1>;
 const ProfilePage = () => <h1>Profile Page</h1>;
@@ -53,6 +54,8 @@ function App() {
         <Route path="/report" element={<Report />} />
         <Route path="/main" element={<Main />} />
         <Route path="/consult" element={<Consult />} />
+        <Route path="/chat/joinpage" element={<JoinPage />} />
+        <Route path="/chat/joinpage/chatpage" element={<ChatPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
