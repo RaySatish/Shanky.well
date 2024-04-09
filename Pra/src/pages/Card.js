@@ -53,14 +53,16 @@ const Card = (props) => {
               {showAll ? "Show less " : "Show more "}
             </span>
           )}
-
-          <p className="card-text text-sm mb-2">
-            <strong>Email:</strong> {props.email}
-          </p>
-
-          <p className="card-text text-sm mb-2">
-            <strong>Phone Number:</strong> {props.phone}
-          </p>
+          {showAll && (
+            <>
+              <p className="card-text text-sm mb-2">
+                <strong>Email:</strong> {props.email}
+              </p>
+              <p className="card-text text-sm mb-2">
+                <strong>Phone Number:</strong> {props.phone}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
