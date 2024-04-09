@@ -78,6 +78,15 @@ const Navbar = () => {
           >
             Contact
           </NavLink> */}
+
+   <NavLink
+            to="/videochatwithdoctor"
+            className="font-medium duration-500 text-gray-900 hover:text-indigo-600"
+          >
+            FreeCall
+          </NavLink>
+
+
           {!isLoggedIn ? (
             <>
               <NavLink

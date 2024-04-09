@@ -84,17 +84,25 @@ const Footer = () => {
         <p className="text-center mb-0 text-gray-600">We're here to ensure your constant joy.</p>
         <form className="mt-4 form_phone" onSubmit={handleSubmit}>
           <div className="flex justify-center items-center"> {/* Centering content horizontally and aligning items center */}
-            <div className="flex-1 mr-2"> {/* Taking up remaining space and adding margin-right */}
-              <input
-                type="tel"
-                className="form-control py-2 px-4 w-60"
-                placeholder="Enter Phone Number"
-                value={phoneNumber}
-                onChange={handleChange}
-              />
-            </div>
-            <div> {/* Adding margin-left */}
-              <button type="submit" className="btn btn-primary">Request Callback</button>
+            <div className="flex justify-end">
+              <form onSubmit={handleSubmit}>
+                <div className="flex justify-end">
+                  <div className="flex-1 mr-2">
+                    <input
+                      type="tel"
+                      className="form-control py-2 px-4 w-60"
+                      placeholder="Enter Phone Number"
+                      value={phoneNumber}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                  <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Request Callback
+                  </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </form>

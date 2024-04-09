@@ -16,8 +16,12 @@ import StudentDashboard from "./pages/StudentDashboard";
 import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+
+import VideoChatWithDoctor from "./pages/VideoChatWithDoctor";
+
 import Appointment from "./components/AppointmentForm";
 import Dashboard from "./pages/Dashboard";
+
 
 // const DashboardPage = () => <h1>Dashboard Page</h1>;
 const ProfilePage = () => <h1>Profile Page</h1>;
@@ -30,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/videochatwithdoctor" element={<VideoChatWithDoctor />} />
         <Route path="/login" element={<Login />} />
 
         <Route path="/student" element={<StudentDashboard />} />
