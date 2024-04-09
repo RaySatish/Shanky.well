@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import web from '../Images/homepage.jpg'
 
 const HeroSection = () => {
   return (
@@ -7,11 +8,10 @@ const HeroSection = () => {
       <div className="container flex flex-wrap items-center justify-center mx-auto mt-10 md:px-12 md:flex-row">
         <div className="mb-14 lg:mb-0 lg:w-1/2">
           <h1 className="max-w-xl text-[2.2rem] leading-none text-gray-900 font-extrabold font-sans text-center md:text-5xl lg:text-left lg:leading-tight mb-5">
-            A small business is only as good as its tools.
+          Specialized Help For Your Mental Health
           </h1>
           <p className="max-w-xl text-center text-gray-500 lg:text-left lg:max-w-md">
-            We're different. Growlight is the only saas business platform that
-            lets you run your business on one platform.
+          We offer personalized support and therapy for various mental health issues.
           </p>
           <div className="flex justify-center mt-14 lg:justify-start">
             <NavLink
@@ -23,7 +23,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="lg:w-1/2">
-          <img className="ml-auto" src="dist/img/hero-img.svg" alt="" />
+          <img className="ml-auto" src={web} alt="" />
         </div>
       </div>
     </section>
