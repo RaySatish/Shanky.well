@@ -1,10 +1,11 @@
 import React from "react";
 import Card from "./Card";
 import CardData from "./CardData";
-
+import Navbar from "../components/NavBar";
 const Services = () => {
   return (
     <>
+    <Navbar />
       <div className="my-5">
         <h1 className="text-center">Professional Staff</h1>
       </div>
