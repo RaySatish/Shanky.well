@@ -16,6 +16,7 @@ import StudentDashboard from "./pages/StudentDashboard";
 import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import Appointment from "./components/AppointmentForm";
 
 const DashboardPage = () => <h1>Dashboard Page</h1>;
 const ProfilePage = () => <h1>Profile Page</h1>;
@@ -34,7 +35,7 @@ function App() {
         <Route path="/warden" element={<WardenDashboard />} />
         <Route path="/admin" element={<AdminDashboard />}>
           <Route path="/admin/dashboard" element={<DashboardPage />} />
-          <Route path="/admin/profile" element={<ProfilePage />} />
+          <Route path="/admin/appointment" element={<Appointment />} />
           <Route path="/admin/settings" element={<SettingsPage />} />
         </Route>
         <Route path="/chief-warden" element={<ChiefWardenDashboard />} />

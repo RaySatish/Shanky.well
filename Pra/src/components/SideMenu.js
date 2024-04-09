@@ -29,11 +29,11 @@ const SideMenu = () => {
           </li>
           <li>
             <NavLink
-              to="/admin/profile"
+              to="/admin/appointment"
               className="block py-2 px-6 text-sm hover:bg-gray-700"
               activeClassName="bg-gray-700"
             >
-              Profile
+              Appointment
             </NavLink>
           </li>
           <li>
