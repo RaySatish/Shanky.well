@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import AuthContext from "../contexts/AuthProvider";
 
-const Navbar = ({ isLoggedIn }) => {
+const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { auth, setAuth, logout } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (auth.token) setIsLoggedIn(true);
+    else setIsLoggedIn(false);
+  }, [auth]);
+
+  function handleLogout(e) {
+    e.preventDefault();
+    const res = window.confirm("Do you want to log out");
+    if (res) {
+      logout();
+    }
+  }
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -121,12 +137,13 @@ const Navbar = ({ isLoggedIn }) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink
+                    <button
                       to="/logout"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className="block px-4 py-2 w-100 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={handleLogout}
                     >
                       Logout
-                    </NavLink>
+                    </button>
                   </li>
                 </ul>
               )}

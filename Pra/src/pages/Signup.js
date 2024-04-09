@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Notification from "../components/Notification";
+import AuthContext from "../contexts/AuthProvider";
 
 function Signup() {
+  const { setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -13,10 +15,11 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [type, setType] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    setIsLoading(true);
     const user = {
       name: username,
       email: email,
@@ -30,7 +33,8 @@ function Signup() {
         "http://127.0.0.1:9000/api/v1/users/signup",
         user
       );
-      console.log(res);
+      setIsLoading(false);
+      setAuth({ user: res.data.user, token: res.data.token });
       setType(res.data.status);
       setMessage("You account has been created");
       navigate("/");
@@ -43,6 +47,7 @@ function Signup() {
       setType(err.response.data.status);
       setMessage(err.response.data.message);
       console.log(err);
+      setIsLoading(false);
     }
   }
 
@@ -171,9 +176,13 @@ function Signup() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className={`flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${
+                  isLoading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={handleSubmit}
+                disabled={isLoading}
               >
-                Sign up
+                {isLoading ? "Signing up..." : "Sign up"}
               </button>
             </div>
           </form>
