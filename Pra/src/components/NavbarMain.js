@@ -7,7 +7,6 @@ const NavbarMain = () => {
   return (
     <nav className="flex items-center justify-between p-2 px-16 bg-blue-500 text-white">
       <div className="logo flex items-center font-bold text-xl">
-        <img src="logo.png" alt="Logo" className="mr-2 w-12" />
         Shanky.well
       </div>
       <div className="profile relative">

@@ -15,6 +15,10 @@ import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 
+const DashboardPage = () => <h1>Dashboard Page</h1>;
+const ProfilePage = () => <h1>Profile Page</h1>;
+const SettingsPage = () => <h1>Settings Page</h1>;
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,7 +28,11 @@ function App() {
 
         <Route path="/student" element={<StudentDashboard />} />
         <Route path="/warden" element={<WardenDashboard />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin" element={<AdminDashboard />}>
+          <Route path="/admin/dashboard" element={<DashboardPage />} />
+          <Route path="/admin/profile" element={<ProfilePage />} />
+          <Route path="/admin/settings" element={<SettingsPage />} />
+        </Route>
         <Route path="/chief-warden" element={<ChiefWardenDashboard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgetPassword" element={<ForgetPassword />} />
