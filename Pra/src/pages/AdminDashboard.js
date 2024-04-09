@@ -1,10 +1,12 @@
-// App.js
+// AdminDashboard.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SideMenu from "../components/SideMenu";
 import MainSection from "../components/MainPage";
+import DashboardCard from "../components/DashboardCard"; // Import DashboardCard
+import BarChart from "../components/BarChart"; // Import BarChart component
 
-const App = () => {
+const AdminDashboard = () => {
+  // Replace these with actual data
   return (
     <div className="flex h-screen">
       <SideMenu />
@@ -13,4 +15,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AdminDashboard;
