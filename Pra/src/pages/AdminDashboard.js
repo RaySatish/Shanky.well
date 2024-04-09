@@ -1,5 +1,16 @@
-function AdminDashboard() {
-  return <div>admin dashboard</div>;
-}
+// App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SideMenu from "../components/SideMenu";
+import MainSection from "../components/MainPage";
 
-export default AdminDashboard;
+const App = () => {
+  return (
+    <div className="flex h-screen">
+      <SideMenu />
+      <MainSection />
+    </div>
+  );
+};
+
+export default App;
