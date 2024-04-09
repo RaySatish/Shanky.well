@@ -2,8 +2,6 @@
 import React from "react";
 import SideMenu from "../components/SideMenu";
 import MainSection from "../components/MainPage";
-import DashboardCard from "../components/DashboardCard"; // Import DashboardCard
-import BarChart from "../components/BarChart"; // Import BarChart component
 
 const AdminDashboard = () => {
   // Replace these with actual data
