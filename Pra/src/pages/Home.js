@@ -4,7 +4,7 @@ import HeroSection from "../components/HeroSection";
 import Testimonial from "../components/Testimonial";
 import Features from "../components/Features";
 import HowItWorks from "../components/HowItWorks";
-import Pricing from "../components/Pricing";
+// import Pricing from "../components/Pricing";
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
       <HeroSection />
       <Features />
       <HowItWorks />
-      <Pricing />
+      {/* <Pricing /> */}
       <Testimonial />
       <Footer />
     </div>
