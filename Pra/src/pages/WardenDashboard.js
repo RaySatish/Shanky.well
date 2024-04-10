@@ -7,12 +7,7 @@ const ChiefWardenDashboard = () => {
   // Replace these with actual data
   return (
     <div className="flex h-screen">
-      <SideMenu
-        menuItems={[
-          { name: "Dashboard", to: "/warden/dashboard" },
-          { name: "Report", to: "/warden/report" },
-        ]}
-      />
+      <SideMenu menuItems={[{ name: "Dashboard", to: "/warden/dashboard" }]} />
       <MainSection />
     </div>
   );

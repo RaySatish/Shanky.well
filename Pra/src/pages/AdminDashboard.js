@@ -12,6 +12,7 @@ const AdminDashboard = () => {
           { name: "Dashboard", to: "/admin/dashboard" },
           { name: "Appointment", to: "/admin/appointment" },
           { name: "Doctors", to: "/admin/doctors" },
+          { name: "Report", to: "/admin/report" },
         ]}
       />
       <MainSection />
