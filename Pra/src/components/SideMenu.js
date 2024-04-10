@@ -6,7 +6,7 @@ const SideMenu = ({ menuItems }) => {
 
   const handleLogout = () => {
     // Perform logout actions here (e.g., clear local storage, etc.)
-    navigate("/main");
+    navigate("/");
   };
 
   return (

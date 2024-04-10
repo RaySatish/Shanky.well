@@ -5,7 +5,7 @@ import CardMain from "../components/CardMain";
 function Main() {
   return (
     <div className="flex flex-wrap justify-center items-center h-screen gap-6">
-      <NavLink to="/login?role=student">
+      <NavLink to="/home">
         <CardMain image="/img/patient.png" title="Student" />
       </NavLink>
       <NavLink to="/login?role=admin">

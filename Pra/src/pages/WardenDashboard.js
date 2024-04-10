@@ -10,7 +10,6 @@ const ChiefWardenDashboard = () => {
       <SideMenu
         menuItems={[
           { name: "Dashboard", to: "/warden/dashboard" },
-          { name: "Diagnosis", to: "/warden/diagnosis" },
           { name: "Report", to: "/warden/report" },
         ]}
       />

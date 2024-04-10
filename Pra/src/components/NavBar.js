@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/AuthProvider";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { auth, setAuth, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (auth.token) setIsLoggedIn(true);
@@ -17,6 +18,7 @@ const Navbar = () => {
     const res = window.confirm("Do you want to log out");
     if (res) {
       logout();
+      navigate("/");
     }
   }
 
@@ -84,7 +86,6 @@ const Navbar = () => {
           >
             FreeCall
           </NavLink>
-
 
           {!isLoggedIn ? (
             <>

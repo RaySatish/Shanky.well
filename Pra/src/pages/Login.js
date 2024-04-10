@@ -129,10 +129,10 @@ function Login() {
       setAuth({ user: res.data.user, token: res.data.token });
       setType(res.data.status);
       setMessage("Login successful");
-      if (role === "student") navigate("/student");
-      else if (role === "admin") navigate("/admin");
-      else if (role === "warden") navigate("/warden");
-      else if (role === "chief-warden") navigate("/chief-warden");
+      if (role === "admin") navigate("/admin/dashboard");
+      else if (role === "warden") navigate("/warden/dashboard");
+      else if (role === "chief-warden") navigate("/cwarden/dashboard");
+      else navigate("/home");
       setEmail("");
       setPassword("");
     } catch (err) {

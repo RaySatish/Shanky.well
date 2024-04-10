@@ -13,12 +13,11 @@ import Services from "./pages/Services";
 import Consult from "./pages/Consult";
 import Main from "./pages/Main";
 import StudentDashboard from "./pages/StudentDashboard";
-import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
+import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import ChatPage from "./pages/ChatPage";
 import JoinPage from "./pages/JoinPage";
-import WardenDashboardMain from "./components/WardenDashboardMain";
 import ChiefWardenDashboardMain from "./components/ChiefWardenDashboardMain";
 import WardenDiagnosis from "./components/WardenDiagnosis";
 import ChiefWardenDiagnosis from "./components/ChiefWardenDiagnosis";
@@ -37,13 +36,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/videochatwithdoctor" element={<VideoChatWithDoctor />} />
         <Route path="/login" element={<Login />} />
-
-        <Route path="/student" element={<StudentDashboard />} />
         <Route path="/warden" element={<WardenDashboard />} />
         <Route path="/admin" element={<AdminDashboard />}>
           <Route path="/admin/dashboard" element={<Dashboard />} />
@@ -52,8 +49,7 @@ function App() {
           <Route path="/admin/action" element={<Action />} />
         </Route>
         <Route path="/warden" element={<WardenDashboard />}>
-          <Route path="/warden/dashboard" element={<WardenDashboardMain />} />
-          <Route path="/warden/diagnosis" element={<WardenDiagnosis />} />
+          <Route path="/warden/dashboard" element={<WardenDiagnosis />} />
           <Route path="/warden/report" element={<SettingsPage />} />
         </Route>
         <Route path="/cwarden" element={<ChiefWardenDashboard />}>
@@ -71,7 +67,7 @@ function App() {
         <Route path="/question" element={<Question />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/report" element={<Report />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/consult" element={<Consult />} />
         <Route path="/chat/joinpage" element={<JoinPage />} />
         <Route path="/chat/chatpage" element={<ChatPage />} />

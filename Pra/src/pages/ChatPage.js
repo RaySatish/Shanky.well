@@ -1,30 +1,30 @@
 // ChatPage.js
-import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
+import React, { useState, useEffect } from "react";
+import io from "socket.io-client";
 
 const ChatPage = () => {
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
-  const [room, setRoom] = useState('');
-  const [username, setUsername] = useState('');
-  const [messageInput, setMessageInput] = useState('');
+  const [room, setRoom] = useState("");
+  const [username, setUsername] = useState("");
+  const [messageInput, setMessageInput] = useState("");
   const socket = io();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const usernameParam = params.get('username');
-    const roomParam = params.get('room');
+    const usernameParam = params.get("username");
+    const roomParam = params.get("room");
 
     setUsername(usernameParam);
     setRoom(roomParam);
 
-    socket.emit('joinRoom', { username: usernameParam, room: roomParam });
+    socket.emit("joinRoom", { username: usernameParam, room: roomParam });
 
-    socket.on('roomUsers', ({ users }) => {
+    socket.on("roomUsers", ({ users }) => {
       setUsers(users);
     });
 
-    socket.on('message', (message) => {
+    socket.on("message", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
 
@@ -35,16 +35,17 @@ const ChatPage = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    socket.emit('chatMessage', messageInput);
-    setMessageInput('');
+    socket.emit("chatMessage", messageInput);
+    setMessageInput("");
   };
-
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
       <header className="p-4 bg-blue-500 text-white">
         <h1 className="font-bold text-xl">Shanky.well</h1>
-        <a href="/" className="text-sm text-white underline">Leave Room</a>
+        <a href="/home" className="text-sm text-white underline">
+          Leave Room
+        </a>
       </header>
       <main className="flex flex-grow">
         <div className="w-64 bg-blue-800 text-white p-4">
@@ -52,7 +53,9 @@ const ChatPage = () => {
           <h3 className="font-bold text-lg mb-4">Users</h3>
           <ul>
             {users.map((user) => (
-              <li key={user.id} className="mb-2">{user.username}</li>
+              <li key={user.id} className="mb-2">
+                {user.username}
+              </li>
             ))}
           </ul>
         </div>
@@ -76,7 +79,12 @@ const ChatPage = () => {
             onChange={(e) => setMessageInput(e.target.value)}
             className="flex-grow mr-2 py-2 px-4 rounded bg-white border-2 border-blue-300 focus:outline-none focus:border-blue-500"
           />
-          <button type="submit" className="py-2 px-4 rounded bg-white text-blue-500 font-bold">Send</button>
+          <button
+            type="submit"
+            className="py-2 px-4 rounded bg-white text-blue-500 font-bold"
+          >
+            Send
+          </button>
         </form>
       </div>
     </div>
