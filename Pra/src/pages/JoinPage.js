@@ -7,9 +7,12 @@ const JoinPage = () => {
   const [username, setUsername] = useState('');
   const [room, setRoom] = useState('');
 
-  const handleJoinChat = (e) => {
-    e.preventDefault();
-    navigate(`/chat/chatpage?username=${username}&room=${room}`);
+  const handleJoinChat = () => {
+    if (username.trim() !== '') { // Check if username is not empty or only whitespace
+      navigate(`/chat/chatpage?username=${username}&room=${room}`);
+    } else {
+      alert('Please enter a username.'); // Show an alert if username is empty
+    }
   };
 
   return (
@@ -52,9 +55,10 @@ const JoinPage = () => {
         </div>
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
+            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${username.trim() === '' ? 'cursor-not-allowed opacity-50' : ''}`}
+            type="button"
             onClick={handleJoinChat}
+            disabled={username.trim() === ''} // Disable button if username is empty
           >
             Join Chat
           </button>

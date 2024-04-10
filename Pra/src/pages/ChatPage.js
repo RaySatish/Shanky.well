@@ -8,30 +8,30 @@ const ChatPage = () => {
   const [room, setRoom] = useState("");
   const [username, setUsername] = useState("");
   const [messageInput, setMessageInput] = useState("");
-  const socket = io();
+  const socket = io("http://localhost:5000");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const usernameParam = params.get("username");
     const roomParam = params.get("room");
-
+  
     setUsername(usernameParam);
     setRoom(roomParam);
-
+  
     socket.emit("joinRoom", { username: usernameParam, room: roomParam });
-
+  
     socket.on("roomUsers", ({ users }) => {
       setUsers(users);
     });
-
+  
     socket.on("message", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
-
+  
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [socket, username]); 
 
   const sendMessage = (e) => {
     e.preventDefault();
