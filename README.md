@@ -1,4 +1,4 @@
-# Mental Health Support Website
+# Mental and Physical Health Support Website
 
 This repository contains the source code for our Mental Health Support Website. The website is designed to provide a comprehensive suite of services for individuals dealing with mental health issues.
 
