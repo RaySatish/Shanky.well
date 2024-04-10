@@ -16,17 +16,18 @@ import StudentDashboard from "./pages/StudentDashboard";
 import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
-import ChatPage from './pages/ChatPage';
-import JoinPage from './pages/JoinPage';
-import WardenDashboardMain from './components/WardenDashboardMain';
-import ChiefWardenDashboardMain from './components/ChiefWardenDashboardMain';
-import WardenDiagnosis from './components/WardenDiagnosis';
-import ChiefWardenDiagnosis from './components/ChiefWardenDiagnosis';
+import ChatPage from "./pages/ChatPage";
+import JoinPage from "./pages/JoinPage";
+import WardenDashboardMain from "./components/WardenDashboardMain";
+import ChiefWardenDashboardMain from "./components/ChiefWardenDashboardMain";
+import WardenDiagnosis from "./components/WardenDiagnosis";
+import ChiefWardenDiagnosis from "./components/ChiefWardenDiagnosis";
 
 import VideoChatWithDoctor from "./pages/VideoChatWithDoctor";
 
 import Appointment from "./components/AppointmentForm";
 import Dashboard from "./pages/Dashboard";
+import Action from "./pages/Action";
 
 // const DashboardPage = () => <h1>Dashboard Page</h1>;
 const ProfilePage = () => <h1>Profile Page</h1>;
@@ -48,6 +49,7 @@ function App() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/appointment" element={<Appointment />} />
           <Route path="/admin/settings" element={<SettingsPage />} />
+          <Route path="/admin/action" element={<Action />} />
         </Route>
         <Route path="/warden" element={<WardenDashboard />}>
           <Route path="/warden/dashboard" element={<WardenDashboardMain />} />
@@ -55,7 +57,10 @@ function App() {
           <Route path="/warden/report" element={<SettingsPage />} />
         </Route>
         <Route path="/cwarden" element={<ChiefWardenDashboard />}>
-          <Route path="/cwarden/dashboard" element={<ChiefWardenDashboardMain />} />
+          <Route
+            path="/cwarden/dashboard"
+            element={<ChiefWardenDashboardMain />}
+          />
           <Route path="/cwarden/diagnosis" element={<ChiefWardenDiagnosis />} />
           <Route path="/cwarden/report" element={<SettingsPage />} />
         </Route>
