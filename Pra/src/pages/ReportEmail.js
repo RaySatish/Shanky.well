@@ -28,7 +28,7 @@ const ReportEmail = () => {
     });
     emailBody += "\nPlease take necessary actions.\n\nRegards,\nAdmin";
 
-    const mailtoLink = `mailto:kumarvishesh01230@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:ray.satish10090@gmail.com?subject=${encodeURIComponent(
       emailSubject
     )}&body=${encodeURIComponent(emailBody)}`;
 
