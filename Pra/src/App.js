@@ -18,6 +18,8 @@ import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import ChatPage from './pages/ChatPage';
 import JoinPage from './pages/JoinPage';
+import WardenDashboardMain from './components/WardenDashboardMain';
+import ChiefWardenDashboardMain from './components/ChiefWardenDashboardMain';
 
 import VideoChatWithDoctor from "./pages/VideoChatWithDoctor";
 
@@ -44,6 +46,16 @@ function App() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/appointment" element={<Appointment />} />
           <Route path="/admin/settings" element={<SettingsPage />} />
+        </Route>
+        <Route path="/warden" element={<WardenDashboard />}>
+          <Route path="/warden/dashboard" element={<WardenDashboardMain />} />
+          <Route path="/warden/diagnosis" element={<Appointment />} />
+          <Route path="/warden/report" element={<SettingsPage />} />
+        </Route>
+        <Route path="/cwarden" element={<ChiefWardenDashboard />}>
+          <Route path="/cwarden/dashboard" element={<ChiefWardenDashboardMain />} />
+          <Route path="/cwarden/diagnosis" element={<Appointment />} />
+          <Route path="/cwarden/report" element={<SettingsPage />} />
         </Route>
         <Route path="/chief-warden" element={<ChiefWardenDashboard />} />
         <Route path="/signup" element={<Signup />} />
