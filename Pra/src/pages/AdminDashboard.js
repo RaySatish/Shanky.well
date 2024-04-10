@@ -7,7 +7,13 @@ const AdminDashboard = () => {
   // Replace these with actual data
   return (
     <div className="flex h-screen">
-      <SideMenu />
+      <SideMenu
+        menuItems={[
+          { name: "Dashboard", to: "/admin/dashboard" },
+          { name: "Appointment", to: "/admin/appointment" },
+          { name: "Settings", to: "/admin/settings" },
+        ]}
+      />
       <MainSection />
     </div>
   );

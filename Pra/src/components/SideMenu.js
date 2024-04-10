@@ -1,8 +1,7 @@
-// SideMenu.js
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const SideMenu = () => {
+const SideMenu = ({ menuItems }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -18,33 +17,17 @@ const SideMenu = () => {
       </div>
       <div className="flex-grow overflow-y-auto">
         <ul className="py-4">
-          <li>
-            <NavLink
-              to="/admin/dashboard"
-              className="block py-2 px-6 text-sm hover:bg-gray-700"
-              activeClassName="bg-gray-700"
-            >
-              Dashboard
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/admin/appointment"
-              className="block py-2 px-6 text-sm hover:bg-gray-700"
-              activeClassName="bg-gray-700"
-            >
-              Appointment
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/admin/settings"
-              className="block py-2 px-6 text-sm hover:bg-gray-700"
-              activeClassName="bg-gray-700"
-            >
-              Settings
-            </NavLink>
-          </li>
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <NavLink
+                to={item.to}
+                className="block py-2 px-6 text-sm hover:bg-gray-700"
+                activeClassName="bg-gray-700"
+              >
+                {item.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex-shrink-0 py-4">

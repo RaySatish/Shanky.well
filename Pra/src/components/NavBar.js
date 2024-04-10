@@ -72,14 +72,13 @@ const Navbar = () => {
           >
             Our Counsellor
           </NavLink>
-          {/* <NavLink
-            to="/contact"
+          <NavLink
+            to="/chat/joinpage"
             className="font-medium duration-500 text-gray-900 hover:text-indigo-600"
           >
-            Contact
-          </NavLink> */}
-
-   <NavLink
+            Community
+          </NavLink>
+          <NavLink
             to="/videochatwithdoctor"
             className="font-medium duration-500 text-gray-900 hover:text-indigo-600"
           >
