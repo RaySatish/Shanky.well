@@ -31,4 +31,13 @@ const getAllAppointments = async (req, res) => {
   }
 };
 
-module.exports = { addAppointment, getAllAppointments };
+const getAppointment = async (req, res) => {
+  const { id } = req.params;
+  const appointment = await Appointment.findById(id);
+  if (!appointment) {
+    return res.status(404).json({ error: "Appointment not found" });
+  }
+  res.status(200).json({ data: appointment });
+};
+
+module.exports = { addAppointment, getAllAppointments, getAppointment };
