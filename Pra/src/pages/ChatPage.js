@@ -1,5 +1,6 @@
 // ChatPage.js
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import io from "socket.io-client";
 
 const ChatPage = () => {
@@ -8,30 +9,30 @@ const ChatPage = () => {
   const [room, setRoom] = useState("");
   const [username, setUsername] = useState("");
   const [messageInput, setMessageInput] = useState("");
-  const socket = io("http://localhost:5000");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const socket = io("http://localhost:9000");
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const usernameParam = params.get("username");
-    const roomParam = params.get("room");
-  
+    const usernameParam = searchParams.get("username");
+    const roomParam = searchParams.get("room");
+
     setUsername(usernameParam);
     setRoom(roomParam);
-  
+
     socket.emit("joinRoom", { username: usernameParam, room: roomParam });
-  
+
     socket.on("roomUsers", ({ users }) => {
       setUsers(users);
     });
-  
+
     socket.on("message", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
-  
+
     return () => {
       socket.disconnect();
     };
-  }, [socket, username]); 
+  }, [socket, username]);
 
   const sendMessage = (e) => {
     e.preventDefault();
