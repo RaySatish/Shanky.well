@@ -10,6 +10,7 @@ const ReportEmail = () => {
     axios
       .get("http://127.0.0.1:9000/api/v1/diagnosis")
       .then((res) => {
+        console.log(res.data);
         setStudentData(res.data);
       })
       .catch((err) => {
@@ -21,23 +22,22 @@ const ReportEmail = () => {
     setSending(true);
     const emailSubject = "Student Health Report";
     let emailBody = "Dear Chief Warden,\n\n";
-    emailBody +=
-      "<table style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th style='border: 1px solid #ddd; padding: 8px;'>Student Name</th><th style='border: 1px solid #ddd; padding: 8px;'>Disease</th></tr>";
-
+    emailBody += "Here is the health report of the students:\n\n";
     studentData.forEach((student) => {
-      emailBody += `<tr><td style='border: 1px solid #ddd; padding: 8px;'>${student.studentName}</td><td style='border: 1px solid #ddd; padding: 8px;'>${student.disease}</td></tr>`;
+      emailBody += `Student Name: ${student.studentName}\nDisease: ${student.disease}\nHostel: ${student.hostel}\n\n`;
     });
-
-    emailBody += "</table>";
     emailBody += "\nPlease take necessary actions.\n\nRegards,\nAdmin";
 
-    const mailtoLink = `mailto:shambhupandey1008@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:kumarvishesh01230@gmail.com?subject=${encodeURIComponent(
       emailSubject
     )}&body=${encodeURIComponent(emailBody)}`;
 
     window.location.href = mailtoLink;
-    setSending(false);
-    setSent(true);
+
+    setTimeout(() => {
+      setSending(false);
+      setSent(true);
+    }, 2000); // Wait for 0.5 seconds before updating sent state
   };
 
   return (
