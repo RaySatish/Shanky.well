@@ -1,4 +1,5 @@
 import DashboardCard from "../components/DashboardCard";
+import DiagnosisTable from "../components/DiagnosisTable";
 import Table from "../components/Table";
 
 function Dashboard() {
@@ -21,6 +22,7 @@ function Dashboard() {
         ))}
       </div>
       <Table />
+      <DiagnosisTable />
     </div>
   );
 }

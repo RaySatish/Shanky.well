@@ -40,4 +40,24 @@ const getAppointment = async (req, res) => {
   res.status(200).json({ data: appointment });
 };
 
-module.exports = { addAppointment, getAllAppointments, getAppointment };
+const deleteAppointment = async (req, res) => {
+  try {
+    const id = req.params.id;
+    // Assuming you have a mongoose model for appointments
+    const appointment = await Appointment.findByIdAndDelete(id);
+    if (!appointment) {
+      return res.status(404).json({ message: "Appointment not found" });
+    }
+    res.json({ message: "Appointment deleted successfully" });
+  } catch (err) {
+    console.error("Failed to delete appointment:", err);
+    res.status(500).json({ message: "Failed to delete appointment" });
+  }
+};
+
+module.exports = {
+  addAppointment,
+  getAllAppointments,
+  getAppointment,
+  deleteAppointment,
+};

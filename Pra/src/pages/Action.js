@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Action = () => {
   const [appointment, setAppointment] = useState(null);
@@ -9,10 +9,12 @@ const Action = () => {
   const [dischargeDate, setDischargeDate] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [hostel, setHostel] = useState("");
+  const [roomNo, setRoomNo] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const id = searchParams.get("id");
-  console.log(id);
   useEffect(() => {
     axios
       .get(`http://127.0.0.1:9000/api/v1/appointments/${id}`)
@@ -26,24 +28,38 @@ const Action = () => {
         setIsLoading(false);
       });
   }, [id]);
-  console.log(appointment);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Assuming you want to update the appointment with diagnosis, admitted status, and discharge date
-    // axios;
-    //   .get(`http://127.0.0.1:9000/api/v1/appointments/${id}`, {
-    //     diagnosis,
-    //     admitted,
-    //     dischargeDate,
-    //   })
-    //   .then((res) => {
-    //     console.log("Appointment updated successfully:", res.data);
-    //     // Handle success, e.g., show a success message
-    //   })
-    //   .catch((err) => {
-    //     console.error("Failed to update appointment:", err);
-    //     // Handle error, e.g., show an error message
-    //   });
+    axios
+      .post(`http://127.0.0.1:9000/api/v1/diagnosis/add`, {
+        studentName: appointment.studentName,
+        doctorName: appointment.doctorName,
+        disease: diagnosis,
+        admitted,
+        hostel,
+        roomNo,
+        dischargeDate,
+      })
+      .then((res) => {
+        console.log("Diagnosis added successfully:", res.data);
+        axios
+          .delete(`http://127.0.0.1:9000/api/v1/appointments/${id}`)
+          .then((res) => {
+            console.log("Appointment deleted successfully:", res.data);
+            // Perform any necessary actions after deletion
+          })
+          .catch((err) => {
+            console.error("Failed to delete appointment:", err);
+            // Handle error, e.g., show an error message
+          });
+        // Redirect to dashboard after successful submission
+        navigate("/admin/dashboard");
+      })
+      .catch((err) => {
+        console.error("Failed to add diagnosis:", err);
+        // Handle error, e.g., show an error message
+      });
   };
 
   if (isLoading) {
@@ -161,6 +177,31 @@ const Action = () => {
               className="mt-1 p-2 border border-gray-300 rounded-md w-full"
             />
           </div>
+          <div className="flex flex-wrap -mx-3 mb-4">
+            <div className="w-full md:w-1/2 px-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Hostel
+              </label>
+              <input
+                type="text"
+                value={hostel}
+                onChange={(e) => setHostel(e.target.value)}
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              />
+            </div>
+            <div className="w-full md:w-1/2 px-3">
+              <label className="block text-sm font-medium text-gray-700">
+                Room No
+              </label>
+              <input
+                type="text"
+                value={roomNo}
+                onChange={(e) => setRoomNo(e.target.value)}
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              />
+            </div>
+          </div>
+
           <button
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
