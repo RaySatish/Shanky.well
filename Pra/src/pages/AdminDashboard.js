@@ -11,7 +11,7 @@ const AdminDashboard = () => {
         menuItems={[
           { name: "Dashboard", to: "/admin/dashboard" },
           { name: "Appointment", to: "/admin/appointment" },
-          { name: "Settings", to: "/admin/settings" },
+          { name: "Doctors", to: "/admin/doctors" },
         ]}
       />
       <MainSection />

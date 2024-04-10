@@ -20,7 +20,6 @@ function Dashboard() {
           <DashboardCard key={index} title={key} value={value} /> // Use DashboardCard
         ))}
       </div>
-      <div className="p-6">{/* <BarChart data={data} /> Use BarChart */}</div>
       <Table />
     </div>
   );

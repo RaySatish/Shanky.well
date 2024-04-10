@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "../components/Header";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { NavLink } from "react-router-dom";
 
 function Report() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -57,12 +58,20 @@ function Report() {
             Disorder: {disorder.name} <br /> Intensity Level: {intensity} <br />{" "}
             Your Score: {value}
           </p>
-          <button
+          {/* <button
             onClick={handleClick}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Consult
-          </button>
+          </button> */}
+
+<NavLink
+              to="/services"
+              className="button bg-white text-blue-500 py-2 px-4 rounded-lg"
+            >
+              Consult
+            </NavLink>
+
         </div>
         <div className="bg-gray-100 shadow-md rounded-lg p-6">
           <p className="text-lg font-semibold mb-4">Intensity Ranges:</p>
