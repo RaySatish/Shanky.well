@@ -27,6 +27,7 @@ import VideoChatWithDoctor from "./pages/VideoChatWithDoctor";
 import Appointment from "./components/AppointmentForm";
 import Dashboard from "./pages/Dashboard";
 import Action from "./pages/Action";
+import Doctors from "./components/Doctors";
 
 // const DashboardPage = () => <h1>Dashboard Page</h1>;
 const ProfilePage = () => <h1>Profile Page</h1>;
@@ -45,6 +46,7 @@ function App() {
         <Route path="/admin" element={<AdminDashboard />}>
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/appointment" element={<Appointment />} />
+          <Route path="/admin/doctors" element={<Doctors />} />
           <Route path="/admin/settings" element={<SettingsPage />} />
           <Route path="/admin/action" element={<Action />} />
         </Route>
