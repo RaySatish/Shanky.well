@@ -2,6 +2,14 @@
 import React from 'react';
 
 const ChiefWardenDiagnosisTable = ({ data }) => {
+  if (!data || data.length === 0) {
+    return (
+      <div className="text-center text-gray-500 mt-4">
+        No data available.
+      </div>
+    );
+  }
+
   // Function to count the number of students admitted from each block
   const countStudentsAdmittedPerBlock = () => {
     const blockCounts = {};

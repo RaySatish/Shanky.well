@@ -1,7 +1,16 @@
 // DiagnosisTable.js
 import React from 'react';
 
-const DiagnosisTable = ({ data }) => {
+const WardenDiagnosisTable = ({ data }) => {
+  // Default case when data is not defined or empty
+  if (!data || data.length === 0) {
+    return (
+      <div className="text-center text-gray-500 mt-4">
+        No data available.
+      </div>
+    );
+  }
+
   return (
     <table className="min-w-full divide-y divide-gray-200">
       <thead className="bg-gray-50">
@@ -54,4 +63,4 @@ const DiagnosisTable = ({ data }) => {
   );
 };
 
-export default DiagnosisTable;
+export default WardenDiagnosisTable;
