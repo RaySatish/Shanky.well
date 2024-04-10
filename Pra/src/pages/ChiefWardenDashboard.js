@@ -11,7 +11,6 @@ const ChiefWardenDashboard = () => {
         menuItems={[
           { name: "Dashboard", to: "/cwarden/dashboard" },
           { name: "Diagnosis", to: "/cwarden/diagnosis" },
-          { name: "Report", to: "/cwarden/report" },
         ]}
       />
       <MainSection />
