@@ -17,7 +17,7 @@ function About() {
             >
               Test Assessment
             </NavLink>
-          <button className="button bg-white text-blue-500 py-2 px-4 rounded-lg">Learn More</button>
+          {/* <button className="button bg-white text-blue-500 py-2 px-4 rounded-lg">Learn More</button> */}
           <div className="decorative-line h-px bg-white bg-opacity-25 my-8"></div> 
           <div className="features grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="feature bg-white rounded-lg p-4">
