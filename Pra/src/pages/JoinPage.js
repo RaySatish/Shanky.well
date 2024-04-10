@@ -9,7 +9,7 @@ const JoinPage = () => {
 
   const handleJoinChat = (e) => {
     e.preventDefault();
-    navigate(`/chat?username=${username}&room=${room}`);
+    navigate(`/chat/chatpage?username=${username}&room=${room}`);
   };
 
   return (
