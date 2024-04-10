@@ -10,8 +10,6 @@ This repository contains the source code for our Mental Health Support Website. 
 
 - **Counselling Services**: Our website connects users with professional counsellors who can provide guidance and support. These services are available via chat, video call, or in-person meetings.
 
-- **Non-Conventional Coping Methods**: We understand that traditional methods may not work for everyone. Therefore, we provide resources and guidance on non-conventional coping methods such as art therapy, music therapy, and mindfulness techniques.
-
 ## Getting Started
 
 To get the website running locally:
