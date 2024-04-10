@@ -70,3 +70,5 @@ function takeAssessment() {
 }
 
 export default About;
+
+  
