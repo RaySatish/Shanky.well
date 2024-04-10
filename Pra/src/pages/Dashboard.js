@@ -21,6 +21,7 @@ function Dashboard() {
         ))}
       </div>
       <div className="p-6">{/* <BarChart data={data} /> Use BarChart */}</div>
+      <Table />
     </div>
   );
 }
