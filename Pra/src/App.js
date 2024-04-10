@@ -55,7 +55,7 @@ function App() {
         <Route path="/main" element={<Main />} />
         <Route path="/consult" element={<Consult />} />
         <Route path="/chat/joinpage" element={<JoinPage />} />
-        <Route path="/chat/joinpage/chatpage" element={<ChatPage />} />
+        <Route path="/chat/chatpage" element={<ChatPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
