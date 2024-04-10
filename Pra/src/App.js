@@ -16,17 +16,12 @@ import StudentDashboard from "./pages/StudentDashboard";
 import ChiefWardenDashboard from "./pages/ChiefWardenDashboard";
 import WardenDashboard from "./pages/WardenDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
-<<<<<<< HEAD
 import ChatPage from "./pages/ChatPage";
 import JoinPage from "./pages/JoinPage";
-=======
-import ChatPage from './pages/ChatPage';
-import JoinPage from './pages/JoinPage';
-import WardenDashboardMain from './components/WardenDashboardMain';
-import ChiefWardenDashboardMain from './components/ChiefWardenDashboardMain';
-import WardenDiagnosis from './components/WardenDiagnosis';
-import ChiefWardenDiagnosis from './components/ChiefWardenDiagnosis';
->>>>>>> 5b351d38457ca30c203cbb94c589ab2ae93476cd
+import WardenDashboardMain from "./components/WardenDashboardMain";
+import ChiefWardenDashboardMain from "./components/ChiefWardenDashboardMain";
+import WardenDiagnosis from "./components/WardenDiagnosis";
+import ChiefWardenDiagnosis from "./components/ChiefWardenDiagnosis";
 
 import VideoChatWithDoctor from "./pages/VideoChatWithDoctor";
 
@@ -62,7 +57,10 @@ function App() {
           <Route path="/warden/report" element={<SettingsPage />} />
         </Route>
         <Route path="/cwarden" element={<ChiefWardenDashboard />}>
-          <Route path="/cwarden/dashboard" element={<ChiefWardenDashboardMain />} />
+          <Route
+            path="/cwarden/dashboard"
+            element={<ChiefWardenDashboardMain />}
+          />
           <Route path="/cwarden/diagnosis" element={<ChiefWardenDiagnosis />} />
           <Route path="/cwarden/report" element={<SettingsPage />} />
         </Route>
